@@ -1,0 +1,16 @@
+name: GitHub Actions Demo
+run-name: Testing out GitHub Actions
+on: [push]
+
+jobs:
+  Basic-Workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Compile Java class
+        run: javac MyCalc.java
+
+      - name: Run Java program
+        run: java MyCalc
